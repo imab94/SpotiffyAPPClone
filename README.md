@@ -1,8 +1,8 @@
-## Install The requirements.txt file using this below command
+# 1. Install The requirements.txt file using this below command
 
     pip install -r requirements.txt
 
-## Run the Project using below command
+# 2. Run the Project using below command
 
     python manage.py runserver 0:8000
     
