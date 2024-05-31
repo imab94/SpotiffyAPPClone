@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Login - Spotify{% endblock title %}
+{% block content %}
+<div class="fluid-container">
+    <div class="navbar-login">
+        <a href="{% url 'home' %}" id="logo-tag">
+            <div class="spotify_logo-login font-weight-bold">
+                <img src="{% static 'spotifyapp/images/spotify_logo.png' %}" alt="Spotify Logo" class="navbar-logo">
+                <span>Spotify</span>
+            </div>
+        </a>
+        <div class="group-items">
+            <div class="grouped">
+                <p>Enter your code</p>
+                <div class="code-form">
+                    <input type="text" placeholder="6-digit code" id="six-digit-code" class="six-digit-code disabled">
+                </div>
+                <div class="jump-to-login">
+                    <a href="">Get a new code</a>
+                    <button href="#" class="btn btn-next disabled" id="nextbutton2" disabled>Next</button>
+                </div>
+                <p id="verify-phone-number" data-testid="verify-phone-number" class="Type__TypeElement-sc-goli3j-0 kwLSIj sc-csuSiG sc-khsqcC dBmAXZ fKSPor" data-encore-id="type">We sent an SMS with a 6-digit code to +917078337290.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer hidden-print">
+    <div class="footer-content">
+        <p>This site is protected by reCAPTCHA and the Google <a class="terms-policies" href="#">Privacy Policy</a> and <a class="terms-policies" href="#">Terms of Service</a> apply.</p>
+    </div>
+</footer>
+<script>
+    const inputBox = document.getElementById('six-digit-code');
+    const button = document.getElementById('nextbutton2');
+
+    inputBox.addEventListener('input', () => {
+        if (inputBox.value.trim() === '') {
+            button.classList.add('disabled');
+            button.classList.remove('enabled');
+            button.setAttribute('disabled', 'disabled');
+        } else {
+            button.classList.remove('disabled');
+            button.classList.add('enabled');
+            button.removeAttribute('disabled');
+        }
+    });
+
+</script>
+
+{% endblock content %}

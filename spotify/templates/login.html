@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Login - Spotify{% endblock title %}
+{% block content %}
+<body class="bodyline"></body>
+    <div class="fluid-container">
+        <div class="navbar-login">
+            <a href="{% url 'home' %}" id="logo-tag">
+                <div class="spotify_logo-login font-weight-bold">
+                    <img src="{% static 'spotifyapp/images/spotify_logo.png' %}" alt="Spotify Logo" class="navbar-logo">
+                    <span>Spotify</span>
+                </div>
+            </a>
+            <div class="container-heading">
+                <div class="container">
+                    <div class="login-heading">
+                        <h1>Log in to Spotify</h1>
+                    </div>
+                    <ul class="eoyGzN">
+                        <li class="jqSqSt">
+                            <button data-testid="google-login" class="Button-sc-y0gtbx-0">
+                                <span>
+                                    <!-- <i class="fa fa-google icons"></i> -->
+                                    <img class="logo-picture" src="{% static 'spotifyapp/images/google.jpg' %}" alt="google picture">
+                                </span>
+                            <span class="follow-us-socials">Continue with Google</span> 
+                            </button>
+                        </li>
+                        <li class="jqSqSt">
+                            <button data-testid="facebook-login" class="Button-sc-y0gtbx-0">
+                                <span>
+                                    <!-- <i class="fa fa-facebook icons"></i> -->
+                                    <img class="logo-picture" src="{% static 'spotifyapp/images/facebook.jpg' %}" alt="google picture">
+                                </span>
+                                <span class="follow-us-socials">Continue with Facebook</span>
+                            </button>
+                        </li>
+                        <li class="jqSqSt">
+                            <button data-testid="apple-login" class="Button-sc-y0gtbx-0">
+                                <span>
+                                    <!-- <i class="fa fa-apple icons"></i> -->
+                                    <img class="logo-picture" src="{% static 'spotifyapp/images/apple.png' %}" alt="google picture">
+                                </span>
+                                <span class="follow-us-socials">Continue with Apple</span>
+                            </button>
+                        </li>
+                        <li class="jqSqSt">
+                            <button data-testid="phone-login" class="Button-sc-y0gtbx-0">
+                                <span class="follow-us-socials">Continue with phone number</span>
+                            </button>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="login-form">
+                        <div class="form-group">
+                            <div class="label-group">
+                                <label for="login-username" class="login-username">Email or username</label>
+                            </div>
+                            <input type="text" id="login-username" autocomplete="off" placeholder="Email or username" class="form-control" autocorrect="off">
+                        </div>
+                        <div class="form-group">
+                            <div class="label-group">
+                                <label for="login-password" class="login-password">Password</label>
+                            </div>
+                            <input type="text" id="login-password" autocomplete="off" placeholder="Password" class="form-control" autocorrect="off">
+                        </div>
+                        <div class="remember-me">
+                            <div class="rememberMe">
+                                <input type="checkbox" name="remember" class="remember-button"/>
+                                <div class="remembertext">
+                                    <span>Remember me</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="logged-btn">
+                            <button>
+                                <span class="span-text">
+                                    <span>
+                                        Log In
+                                    </span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="forgot-password">
+                            <a href="{% url 'forget_password_page' %}" class="fg-btn" id="forgotpass">Forgot your password?</a>
+                        </div>
+                        <hr style="margin-top:2rem;">
+                        <div class="donthaveaccount">
+                            <div class="signuplink-container">
+                                <span class="accountsignup">Don't have an account?</span>
+                                <a href="{% url 'register_page' %}" class="signuplink"><span>Sign up for Spotify.</span></a>
+                            <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer hidden-print1">
+        <div class="footer-content">
+            <p>This site is protected by reCAPTCHA and the Google <a class="terms-policies" href="#">Privacy Policy</a> and <a class="terms-policies" href="#">Terms of Service</a> apply.</p>
+        </div>
+    </footer>
+</body>
+{% endblock %}
+

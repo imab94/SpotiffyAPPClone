@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Spotify - Web Player{% endblock title %}
+{% block content %}
+
+<div class="dialog-container">
+    <div class="dialog-content">
+        <div class="dialog-image">
+            <img src="https://i.scdn.co/image/ab67706f0000000254473de875fea0fd19d39037" alt="">
+        </div>
+        <div class="dialog-text">
+            <h2>Start listening with a free Spotify account</h2>
+            <a href="{% url 'register_page' %}" class="btn btn-primary signupbutton">Sign up free</a>
+            <div >
+                <a href='#' class="btn download_app">Download app</a>
+            </div>
+            <p>
+                <span>Already have an account?</span>
+                <a href="{% url 'login_page' %}">Log in</a>
+            </p>
+        </div>
+        <!-- <div class="dialog-close">
+            <button class="btn-tertiary">Close</button>
+        </div> -->
+    </div>
+</div>
+
+{% endblock content %}

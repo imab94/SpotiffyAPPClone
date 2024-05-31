@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Signup - Spotify{% endblock title %}
+{% block content %}
+
+<div class="fluid-container">
+    <div class="navbar-login">
+        <a href="{% url 'home' %}" id="logo-tag">
+            <div class="spotify_logo-login font-weight-bold">
+                <img src="{% static 'spotifyapp/images/spotify_logo.png' %}" alt="Spotify Logo" class="navbar-logo">
+                <span>Spotify</span>
+            </div>
+        </a>
+        <div class="signup-container-heading">
+            <div class="container" style="padding: 0 90px;">
+                <div class="signup-heading">
+                    <h1>Sign up to start listening</h1>
+                </div>
+                <div class="signup-form">
+                    <div class="form-group">
+                        <div class="label-group">
+                            <label for="signup-username" class="login-username">Email address</label>
+                        </div>
+                        <input type="email" id="signup-username" autocomplete="off" placeholder="name@domain.com" class="form-control" autocorrect="off">
+                    </div>
+                    <div class="signup-alternate">
+                        <a href="{% url 'phone_number_login' %}" class="alternate-method">
+                            <span>Use phone number instead.</span>
+                        </a>
+                    </div>
+                    <div class="logged-btn">
+                        <button>
+                            <span class="span-text">
+                                <span>
+                                    Next
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="line-container">
+                        <div class="line"></div>
+                        <div class="or">or</div>
+                        <div class="line"></div>
+                    </div>                                       
+                    <ul class="eoyGzN">
+                        <li class="jqSqSt">
+                            <button data-testid="google-login" class="Button-sc-y0gtbx-0">
+                                <span>
+                                    <!-- <i class="fa fa-google icons"></i> -->
+                                    <img class="logo-picture" src="{% static 'spotifyapp/images/google.jpg' %}" alt="google picture">
+                                </span>
+                               <span class="follow-us-socials">Continue with Google</span> 
+                            </button>
+                        </li>
+                        <li class="jqSqSt">
+                            <button data-testid="facebook-login" class="Button-sc-y0gtbx-0">
+                                <span>
+                                    <!-- <i class="fa fa-facebook icons"></i> -->
+                                    <img class="logo-picture" src="{% static 'spotifyapp/images/facebook.jpg' %}" alt="google picture">
+                                </span>
+                                <span class="follow-us-socials">Continue with Facebook</span>
+                            </button>
+                        </li>
+                        <li class="jqSqSt">
+                            <button data-testid="apple-login" class="Button-sc-y0gtbx-0">
+                                <span>
+                                    <!-- <i class="fa fa-apple icons"></i> -->
+                                    <img class="logo-picture" src="{% static 'spotifyapp/images/apple.png' %}" alt="google picture">
+                                </span>
+                                <span class="follow-us-socials">Continue with Apple</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="alreadyhaveanaccount">
+                    <div class="asking-container">
+                        <span class="accountsignup">Already have an account?</span>
+                        <a href="{% url 'login_page' %}" class="signuplink"><span>Log in here.</span></a>
+                    <div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer hidden-print1">
+    <div class="footer-content">
+        <p>This site is protected by reCAPTCHA and the Google <a class="terms-policies" href="#">Privacy Policy</a> and <a class="terms-policies" href="#">Terms of Service</a> apply.</p>
+    </div>
+</footer>
+{% endblock content %}

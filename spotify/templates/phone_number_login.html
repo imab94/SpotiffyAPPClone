@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Login - Spotify{% endblock title %}
+{% block content %}
+    <div class="fluid-container">
+      <div class="navbar-login">
+            <a href="{% url 'home' %}" id="logo-tag">
+                <div class="spotify_logo-login font-weight-bold">
+                    <img
+                    src="{% static 'spotifyapp/images/spotify_logo.png' %}"
+                    alt="Spotify Logo"
+                    class="navbar-logo"/>
+                    <span>Spotify</span>
+                </div>
+            </a>
+        </div>
+        <div class="signup-container-heading">
+            <div class="mobile-form">
+                <label for="phone-number" class="mobile-text-label">Enter phone number</label>
+              <div style="display: flex; gap: 20px;">
+                <select name="inputCountryCode" id="phonelogin-country" data-testid="phonelogin-country" class="Select-sc-3qvhho-0 gBiTxD">
+                    <option disabled="" value=""></option>
+                    <option label="+20" value="EG">+20</option>
+                    <option label="+27" value="ZA">+27</option>
+                    <option label="+51" value="PE">+51</option>
+                    <option label="+52" value="MX">+52</option>
+                    <option label="+54" value="AR">+54</option>
+                    <option label="+55" value="BR">+55</option>
+                    <option label="+56" value="CL">+56</option>
+                    <option label="+57" value="CO">+57</option>
+                    <option label="+62" value="ID">+62</option>
+                    <option label="+66" value="TH">+66</option>
+                    <option label="+84" value="VN">+84</option>
+                    <option label="+91" value="IN" selected="">+91</option>
+                    <option label="+212" value="MA">+212</option>
+                    <option label="+213" value="DZ">+213</option>
+                    <option label="+233" value="GH">+233</option>
+                    <option label="+234" value="NG">+234</option>
+                    <option label="+254" value="KE">+254</option>
+                    <option label="+255" value="TZ">+255</option>
+                    <option label="+256" value="UG">+256</option>
+                    <option label="+593" value="EC">+593</option>
+                    <option label="+852" value="HK">+852</option>
+                    <option label="+966" value="SA">+966</option>
+                    <option label="+971" value="AE">+971</option>
+                </select>
+                <input type="text" id="phone-number" autocomplete="off" placeholder="Phone number" class="form-control" autocorrect="off"/>
+              </div>
+              <a href="{% url 'verifications' %}" class="btn btn-next disabled" id="nextbutton" disabled>Next</a>
+            </div>
+        </div>                   
+    </div>
+
+    <script>
+      const inputBox = document.getElementById('phone-number');
+      const button = document.getElementById('nextbutton');
+
+      inputBox.addEventListener('input', () => {
+          if (inputBox.value.trim() === '') {
+              button.classList.add('disabled');
+              button.classList.remove('enabled');
+              button.setAttribute('disabled', 'disabled');
+          } else {
+              button.classList.remove('disabled');
+              button.classList.add('enabled');
+              button.removeAttribute('disabled');
+          }
+      });
+
+  </script>
+
+{% endblock content %}

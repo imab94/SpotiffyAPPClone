@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Spotify - Web Player{% endblock title %}
+{% block content %}
+<div class="container-fluid">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" id="logo-tag">
+            <div class="spotify_logo">
+            <img src="{% static 'spotifyapp/images/spotify_logo.png' %}" alt="Spotify Logo" class="sidebar-logo">
+            <span>Spotify</span>
+            </div>
+        </a>
+        <ul class="sidebar-menu">
+            <li id="homeLi"><i class="fa fa-home"></i><span>Home</span></li>
+            <li id="searchLi"><i class="fa fa-search"></i><span>Search</span></li>
+            <li>
+                <i class="fa fa-book"></i>
+                <!-- <svg id="svglibrary" data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE">
+                    <path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z">
+                    </path>
+                </svg> -->
+                <span class="library-heading">Your Library</span>
+                <i class="fa fa-plus"></i>
+            </li>
+                <div class="library-content">
+                    <div class="scrollbar">
+                        <div class="playlist">
+                            <p>Create your first playlist</p>
+                            <span>It's easy, we will help you</span><br>
+                            <a href="#" class=" btn create-playlist">Create Playlist</a>
+                        </div>
+                        <div class="podcasts">
+                            <p>Let's find some podcasts to follow</p>
+                            <span>We'll keep you updated on new episodes</span><br>
+                            <a href="#" class="btn create-podcasts">Browse Podcasts</a>
+                        </div>
+                    </div>
+                </div>
+        </ul>            
+        <div class="sidebar-footer">
+            <a href="#">Legal</a>
+            <a href="#">Safety & Privacy Center</a>
+            <a href="#">PrivacyPolicy</a>
+            <a href="#">Cookies</a>
+            <a href="#">About Ads</a>
+            <a href="#">Accessibility</a>
+            <a href="#">Cookies</a>
+        </div>
+        <div class="sidebar-globe">
+            <i class="fa fa-globe"></i><a href="#">English</a>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Login/Signup Navbar -->
+        <div class="login-signup-navbar rounded">
+            <div class="nav-buttons">
+                <a class="nav-button"><i class="fas fa-chevron-left"></i></a>
+                <a class="nav-button"><i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="searchbar">
+                <div class="searchbox">
+                    <form action="#" id="searchformbox">
+                        <input type="text" name="searchboxfield" id="searchbox">
+                    </form>
+                    <div class="search-groups">
+                        <i class="fa fa-search"></i>
+                        <span id="playinformation">What do you want to play?</span>
+                    </div>
+                </div>
+            </div>
+            <div class="login-signup-links">
+                <a href="{% url 'register_page' %}" class="signup">Sign Up</a>
+                <a href="{% url 'login_page' %}" class="login">Log in</a>
+            </div>
+        </div>            
+        <!-- Playlists Here -->
+        <div class="fluid-container" id="spotify-playlist">
+            <div class="music-cards">
+                <p class="playlist-paragraph">Spotify Playlists</p>
+                <div class="row mx-auto my-auto">
+                    {% for playlist in playlists %}
+                    <div class="col-md-3 col-sm-4 col-12 my-2">
+                        <a href="{% url 'dashboard' playlist.id %}" class="card-link">
+                            <div class="card">
+                                <img src="{{playlist.image.url}}" alt="Playlist 1">
+                                <p>{{playlist.title}}</p>
+                                <span>{{playlist.description}}</span>
+                                <i class="fa fa-play-circle"></i>                         
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div> 
+           <!-- Browse All Categories -->
+        <div class="fluid-container" id="browse-section">
+            <div class="container categories-section" id="playlistCategory">
+                <div class="category-heading">
+                    <h3 id="headings">Browse all</h3>
+                </div>
+                <div class="row" id="categoryrow"> 
+                    {% for card in category_cards %}             
+                    <div class="col-md-3">
+                        <a draggable="false" class="card-hover" href="#" style="background-color: rgb(225, 17, 140);">
+                            <div>
+                                <div class="card categories-card" style="background-color: {{ card.color_hex_code }};" data-color="{{ card.color_hex_code }}">
+                                    <img aria-hidden="false" draggable="false" loading="lazy" src="{{ card.image.url }}" alt="" class="mMx2LUixlnN_Fu45JpFB Op2n2H4o1iY0Xo2wAUH9 Yn2Ei5QZn19gria6LjZj">
+                                    <span class="Text__TextElement-sc-if376j-0 gYdBJW encore-text-title-small bQthUEx0_U98DJkT1saO" data-encore-id="text">{{card.name}}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div> 
+                    {% endfor %}
+                </div>             
+            </div>
+        </div>        
+        <!-- Footer Starts -->
+        <div class="footer">
+            <div class="column">
+                <p>Company</p>
+                <ul>
+                    <li>About</li>
+                    <li>Jobs</li>
+                    <li>For the Record</li>
+                </ul>
+            </div>
+            <div class="column">
+                <p>Communities</p>
+                <ul>
+                    <li>For Artists</li>
+                    <li>Developers</li>
+                    <li>Advertising</li>
+                    <li>Investors</li>
+                    <li>Vendors</li>
+                </ul>
+            </div>
+            <div class="column">
+                <p>Useful Links</p>
+                <ul>
+                    <li>Support</li>
+                    <li>Free Mobile App</li>
+                </ul>
+            </div>
+            <div class="column social">
+                <p>Follow Us</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <hr>
+            <p class="copy-trandemark">&copy;2024 Spotify AB</p>
+        </div>            
+    </div>
+</div>
+<!-- Banner Starts for Signup -->
+<div class="banner">
+    <div class="banner-heading">
+        <h4 class="banner-text">Preview of Spotify</h4>
+        <span>Signup to get unlimited songs and podcasts with occasional ads. No credit card needed.</span>
+    </div>
+    <div class="signup-banner">
+        <a href="{% url 'register_page' %}" class="btn">
+            <span> Sign up free </span>  
+        </a>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.music-cards .card');
+    
+        cards.forEach(card => {
+            const playButton = card.querySelector('.fa.fa-play-circle');
+    
+            card.addEventListener('mouseover', function() {
+                playButton.classList.add('show-play');
+            });
+    
+            card.addEventListener('mouseout', function() {
+                playButton.classList.remove('show-play');
+            });
+        });
+    });
+    
+    const searchbox = document.querySelector('#searchbox');
+    const searchtext = document.querySelector('.search-groups span');
+    searchbox.addEventListener('input', function() {
+        if (searchbox.value.trim() === '') {
+            searchtext.style.display = 'inline';
+        } else {
+            searchtext.style.display = 'none';
+        }
+    });
+
+    let searchbar = document.querySelector(".searchbar");
+    const sidebarMenu = document.querySelector('.sidebar-menu');
+    let homeLi = document.getElementById('homeLi');
+    const libraryLi = document.querySelector('.library-heading').parentNode;
+    const spotify_playlist = document.querySelector('#spotify-playlist');
+    const browse_section = document.querySelector('#browse-section');
+    const categoryrow = document.querySelector('#categoryrow');
+    const logo_tag = document.querySelector('#logo-tag'); 
+    let searchLi = document.querySelector('#searchLi');
+
+    logo_tag.addEventListener('click', function(event) {
+        event.preventDefault();
+        browse_section.style.display = "none";
+    });
+
+
+    searchLi.addEventListener('click', function(event) {
+        searchbar.style.display = 'block';
+        spotify_playlist.style.display = 'none';
+        browse_section.style.display = 'block';
+    });
+
+    homeLi.addEventListener('click', function(event) {
+        searchbar.style.display = 'none';
+        spotify_playlist.style.display = 'block';
+        browse_section.style.display = 'none';
+    });
+
+    libraryLi.addEventListener('click', function(event) {
+        searchbar.style.display = 'none';
+        spotify_playlist.style.display = 'block';
+        browse_section.style.display = 'none';
+    });
+
+        const cards = document.querySelectorAll('.categories-card');
+        console.log(cards);
+        cards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                const bgColor = card.dataset.color;
+                card.style.boxShadow = `0px 0px 32px 6px ${bgColor}`;
+                card.style.opacity = 1;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = '';
+            });
+        });
+        
+</script>
+
+{% endblock content %}
+

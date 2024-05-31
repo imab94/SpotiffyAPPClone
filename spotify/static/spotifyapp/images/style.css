@@ -1,0 +1,1295 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+.container-fluid{
+    padding-right: 0;
+}
+/* .sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: #171717;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+} */
+
+/* Default styles for sidebar */
+.sidebar {
+    width: 20%;
+    max-width: 30%;
+    height: 100vh;
+    background-color: rgb(23, 23, 23);
+    padding: 20px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+/* Media query for tablets */
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        max-width: 100%;
+        position: static;
+    }
+}
+
+/* Media query for mobile */
+@media only screen and (max-width: 480px) {
+    .sidebar {
+        padding: 20px 10px;
+    }
+    .sidebar ul.sidebar-menu {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .sidebar ul.sidebar-menu li {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .sidebar ul.sidebar-menu li:last-child {
+        border-bottom: none;
+    }
+    .sidebar ul.sidebar-menu li span {
+        margin-left: 10px;
+    }
+    .sidebar ul.sidebar-menu li i {
+        margin-right: 10px;
+    }
+}
+
+
+.sidebar-globe {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    padding: 2px 7px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: transform 0.1s ease;
+}
+
+.sidebar-globe a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-globe:hover{
+   transform: scaleX(1.05);
+   border: 1px solid #fff;
+}
+
+.sidebar-globe i {
+    color: white;
+    margin-right: 5px;
+}
+
+.spotify_logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.sidebar-logo {
+    width: 30px; 
+    margin-right: 5px; 
+    border-radius: 50%;
+}
+
+.spotify_logo:hover{
+    cursor: pointer;
+}
+  
+.spotify_logo span{
+    font-weight: 600;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+
+.sidebar-menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; 
+    color: #ccc;
+    font-weight: 600;
+}
+
+.sidebar-menu li :hover{
+    color: #fff;
+    cursor: pointer;
+}
+
+.sidebar-menu li i {
+    margin-right: 15px; 
+}
+
+.sidebar-menu .fa-plus{
+    margin-left:3rem;
+}
+
+.sidebar-menu span{
+    color:#ccc;
+}
+
+.sidebar-footer {
+    margin-top:1rem;
+    position: absolute;
+    left: 20px;
+    background-color: #171717;
+    color:#fff;
+}
+
+.sidebar-footer a{
+    font-size:12px;
+    padding-right: 4px;
+    color:#ccc;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.main-content {
+    margin-left: 20%;
+}
+.login-signup-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: #000;
+    margin-bottom: 8px;
+}
+
+.nav-buttons {
+    display: flex;
+}
+
+.nav-button {
+    background:none;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 10px 10px;
+    margin-right: 10px;
+    color: #ccc !important;
+    border-radius:50%;
+}
+
+.login-signup-links {
+    display: flex;
+}
+
+.login-signup-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    font-weight:600;
+}
+
+.login-signup-links .login{
+    background-color: #fff;
+    color: #000;
+}
+
+.login-signup-links a:hover {
+    background-color: #fff;
+    color: #000;
+    
+}
+
+.footer {
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    background-color: #171717;
+    color: #fff;
+    padding: 90px 50px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer .column p{
+    font-weight: bold;
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.column li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #fff;
+}
+.social .social-icons {
+    display: flex;
+    border: 50% solid #fff;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    font-size:1rem;
+    margin-left: 0.5rem;
+    width: 30px; 
+    height: 30px; 
+    border: 1px solid rgb(243, 239, 239); 
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px; 
+    transition: border-color 0.3s; 
+    
+}
+
+.social-icons a:hover {
+    background-color: rgb(144, 137, 137);
+}
+
+hr {
+    width: 100%;
+    margin: 8px 0;
+    border: none;
+    border-top: 1px solid rgb(87, 83, 83);
+}
+
+.copy-trandemark {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.container {
+    padding: 0 15px; 
+}
+
+.music-cards {
+    background-color: #171717;
+    border-radius: 5px;
+    width: 100%;
+    height: 400px; 
+    margin-top: 0;
+    overflow-y: auto; 
+    padding: 15px; 
+}
+
+.music-cards .playlist-paragraph {
+    color: #fff;
+    background-color: #171717 ;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px; 
+    margin-left: 1rem;
+}
+
+.music-cards .card{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    padding:1rem;
+    background-color: #212020;
+    border-radius: 10px;
+}
+
+.music-cards .card p{
+    margin: 0.5rem 0.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.music-cards .card span{
+    color: #ccc;
+    margin: 0.15rem 0.5rem;
+    padding: 0.2rem;
+    font-size: 13px;
+}
+
+.music-cards .card img{
+    border-radius:5px;
+}
+
+
+.music-cards .card .fa.fa-play-circle {
+    position: absolute;
+    top: 8rem;
+    right: 18px;
+    color: rgb(21, 209, 21);
+    font-size: 3em;
+    z-index: 1; 
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    display: none;
+    background-color:rgb(29, 27, 27);
+}
+
+.music-cards .card:hover{
+    cursor: pointer;
+    background-color:rgba(52, 49, 49, 0.8);
+}
+
+.music-cards .card .fa.fa-play-circle.show-play {
+    display: block;
+}
+
+.music-cards .card .fa.fa-play-circle:hover{
+    font-size: 3.1em;
+}
+
+
+.sidebar-menu .library-content .playlist p{
+    font-size:1rem;
+    margin: 0 auto;
+    padding:3px;
+    color:#fff;
+    font-weight: bold;
+}
+
+.sidebar-menu .library-content .playlist span{
+    font-size:0.8rem;
+    color:#fff;
+    margin: 0 auto;
+    padding:3px;
+    font-weight: normal;
+}
+
+.sidebar-menu .library-content .playlist .create-playlist{
+    background-color:#fff;
+    border-radius:20px;
+    color:#000;
+    font-size: 13px;
+    margin-top:0.5rem;
+    transition: transform 0.1s ease;
+    font-weight: bold;
+}
+
+.sidebar-menu .library-content .playlist .create-playlist:hover {
+    transform: scaleX(1.05);
+}
+
+
+.sidebar-menu .library-content .scrollbar {
+    display: flex;
+    flex-direction: column;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.sidebar-menu .library-content .scrollbar .playlist{
+    background-color:rgb(40 40 40);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.sidebar-menu .library-content .scrollbar .podcasts{
+    margin-top:0.6rem;
+    background-color:rgb(40 40 40);
+    border-radius: 10px;
+    padding: 8px;
+    transition: transform 0.1s ease;
+}
+
+.sidebar-menu .library-content .scrollbar .create-podcasts:hover {
+    transform: scaleX(1.05);
+}
+
+
+.sidebar-menu .library-content .scrollbar .podcasts p{
+    font-size:1rem;
+    margin: 0 auto;
+    padding:3px;
+    color:#fff;
+    font-weight: bold;
+}
+
+.sidebar-menu .library-content .scrollbar .podcasts span{
+    font-size:0.8rem;
+    color:#fff;
+    margin: 0 auto;
+    padding:3px;
+    font-weight: normal;   
+}
+
+.sidebar-menu .library-content .scrollbar .podcasts .create-podcasts{
+    background-color:#fff;
+    border-radius:20px;
+    color:#000;
+    font-size: 13px;
+    margin-top:0.5rem;
+    font-weight: bold;
+}
+
+.sidebar-menu .library-content .scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar-menu .library-content .scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar-menu .library-content .scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(184, 181, 181);
+}
+
+.sidebar-menu .library-content .scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.banner {
+    background: linear-gradient(to right, #c43891, #82a9f1);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    border-radius: 5px;
+    max-height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-heading {
+    text-align: left;
+}
+
+.banner-text {
+    font-size: 0.9em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+.banner span {
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.signup-banner{
+    padding: 0 2rem;
+    margin-right: 20px;
+    transition: transform 0.1s ease;
+}
+
+.signup-banner:hover{
+    transform:scale(1.05,1.05);
+}
+
+.signup-banner a {
+    font-weight:bold;
+}
+
+.banner .btn {
+    background-color: #fff;
+    color: #0c0c0c;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    outline: none;
+    border: none;
+    float: right;
+}
+
+.banner .btn:hover {
+    background-color: #f2f2f2;
+}
+
+.bodyline{
+    background: linear-gradient(rgba(6,6,6, 0.8) 0%, rgb(20,20, 20) 100%);
+}
+.spotify_logo-login{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding:1.5rem 1rem;
+    border-radius: 2px;
+    background-color: #000;
+}   
+
+.navbar-logo{
+    width: 40px; 
+    margin-right: 5px; 
+    border-radius: 50%;
+}
+
+.spotify_logo-login span{
+    font-weight: 600;
+    font-size:1.4rem;
+}
+
+
+.container-heading {
+    background-color: #000; 
+    padding: 20px; 
+    text-align: center; 
+    max-width: 734px;
+    margin: 50px auto;
+    padding: 32px;
+    width: 100%;
+    border-radius: 8px;
+    row-gap: normal;
+}
+
+.signup-container-heading{
+    background-color: #000; 
+    padding: 20px; 
+    text-align: center; 
+    max-width: 734px;
+    margin: 0px auto;
+    padding: 32px;
+    width: 100%;
+    border-radius: 8px;
+    row-gap: normal;
+}
+
+.login-heading {
+    margin-bottom: 20px; 
+}
+
+.signup-heading h1{
+    color: #fff;
+    font-weight:bold;
+    text-align: center;
+    font-size: 3rem;
+    font-family: Circular, sans-serif;
+}
+
+.login-heading h1{
+    color: #fff;
+    font-weight:bold;
+    text-align: center;
+    margin:35px 0;
+    font-size: 3rem;
+    font-family: Circular, sans-serif;
+}
+
+
+.container-heading ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.signup-container-heading .signup-form ul{
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.container-heading li {
+    background-color: #000; 
+    color: #fff; 
+    margin-bottom: 2px; 
+    padding: 10px;
+}
+
+.signup-container-heading .signup-form li{
+    background-color: #000; 
+    color: #fff; 
+    margin-bottom: 2px; 
+    padding: 10px;
+}
+
+.container-heading li button:hover {
+    border: 1px solid #fff;
+}
+
+.signup-container-heading .signup-form li button:hover {
+    border: 1px solid #fff;
+
+}
+
+.container-heading li img{
+    font-size: 1.5rem;
+    margin-left: 20px;
+    height: 1.3rem;
+    width: 1.3rem;
+}
+
+.signup-container-heading .signup-form li img{
+    font-size: 1.5rem;
+    margin-left: 20px;
+    height: 1.3rem;
+    width: 1.3rem;
+}
+
+.container-heading li button{
+    position: relative;
+    display: inline-flex;
+    background-color: #000;
+    outline: none;
+    border:1px solid #878787;
+    color: #fff;
+    border-radius: 500px;
+    text-align: center;
+    padding: 9px;
+    min-block-size: 48px;
+    inline-size: 50%;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: normal;
+}
+
+.signup-container-heading .signup-form li button{
+    position: relative;
+    display: inline-flex;
+    background-color: #000;
+    outline: none;
+    border:1px solid #878787;
+    color: #fff;
+    border-radius: 500px;
+    text-align: center;
+    padding: 9px;
+    min-block-size: 48px;
+    inline-size: 70%;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: normal;
+}
+
+.follow-us-socials {
+    margin: auto; 
+    display: inline-block; 
+    vertical-align: middle;
+    font-size: 1rem;
+}
+
+.login-form{
+    margin-top:2rem;
+}
+
+.signup-form{
+    margin-top:2rem;
+}
+
+.login-form .form-group{
+    margin-bottom:1.5rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form button {
+    position: relative;
+    display: inline-flex;
+    background-color: #000;
+    outline: none;
+    border: 1px solid #878787;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    min-width: 48px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: normal;
+}
+
+
+.signup-form input[type="email"],
+.signup-form input[type="password"],
+.signup-form input[type="text"],
+.signup-form button {
+    position: relative;
+    display: inline-flex;
+    background-color: #000;
+    outline: none;
+    border: 1px solid #878787;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    min-width: 48px;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: normal;
+}
+
+.login-form .login-username{
+    display: inline-block;
+    margin-right: 12.4rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.signup-form .login-username{
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.login-form .login-password{
+    display: inline-block;
+    margin-right: 16rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.signup-form .login-password{
+    display: inline-block;
+    margin-right: 16rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.rememberMe {
+    display: flex;
+    align-items: center;
+}
+
+.rememberMe .remembertext {
+    margin-left: 5px; 
+}
+
+
+.login-form .remember-me{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 10rem;
+}
+
+.login-form .remember-me .remember-button{
+    accent-color: #1fdf64;
+}
+.login-form .logged-btn{
+    margin-top: 1.5rem;
+
+}
+
+.signup-form .logged-btn{
+    margin-top: 1.5rem;
+
+}
+
+.login-form .logged-btn button{
+    background-color: #1fdf64;
+    border-radius: 22px;
+    font-weight: bold;
+    color: #000;
+}
+
+.signup-form .logged-btn button{
+    background-color: #1fdf64;
+    border-radius: 22px;
+    font-weight: bold;
+    color: #000;
+}
+
+.login-form .logged-btn button:hover{
+    transform: scaleX(1.05);
+}
+
+.login-form .forgot-password{
+    margin-top:1.5rem;
+}
+
+.login-form .forgot-password .fg-btn{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.login-form .forgot-password .fg-btn:hover {
+    color: #1fdf64;
+}
+
+
+.signup-form .logged-btn button:hover{
+    transform: scaleX(1.05);
+}
+
+.signup-form .forgot-password{
+    margin-top:1.5rem;
+}
+
+.signup-form .forgot-password .fg-btn{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.signup-form .forgot-password .fg-btn:hover {
+    color: #1fdf64;
+}
+
+
+.donthaveaccount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.signuplink-container {
+    display: flex;
+    align-items: center;
+}
+
+.accountsignup {
+    margin-right: 10px;
+    color: #ccc; 
+}
+
+.asking-container{
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.signuplink {
+    text-decoration: none; 
+    color: #fff; 
+}
+
+.signuplink:hover{
+    color: #1fdf64;
+}
+
+.login-form .form-group .form-control{
+    padding: 1.3rem;
+}
+
+.login-form .form-control:hover{
+    border: 1px solid #fff;
+}
+
+.login-form .form-control:focus{
+    border: 2px solid #fff;
+}
+
+
+.signup-form .form-group .form-control{
+    padding: 1.3rem;
+}
+
+.signup-form .form-control:hover{
+    border: 1px solid #fff;
+}
+
+.signup-form .form-control:focus{
+    border: 2px solid #fff;
+}
+
+.hidden-print {
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+.hidden-print1 {
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p{
+    font-size:12px;
+    color: #ccc;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+
+}
+
+.footer-content .terms-policies{
+    text-decoration: underline;
+    color: #ccc;
+}
+
+.signup-form .signup-alternate {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.signup-form .signup-alternate .alternate-method{
+    color: #1fdf64;
+    text-decoration: underline;
+
+}
+
+.line-container {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.line {
+    flex: 1;
+    border-top: 1px solid rgb(87, 83, 83);
+
+}
+
+.or {
+    color: #fff;
+    margin: 0 10px;
+}
+
+#logo-tag{
+    text-decoration: none;
+}
+
+
+.mobile-form select {
+    position: relative;
+    display: inline-flex;
+    background-color: #000;
+    outline: none;
+    border: 1px solid #878787;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    min-width: 48px;
+    width: 30%;
+    align-items: center;
+    min-block-size: 48px;
+    justify-content: center;
+    letter-spacing: normal;
+    border-radius: 5px;
+    padding-inline: 14px 5rem;
+  }
+
+  .mobile-form input[type="text"] {
+    position: relative;
+    display: inline-flex;
+    background-color: #000;
+    outline: none;
+    border: 1px solid #878787;
+    color: #fff;
+    text-align: center;
+    padding: 22px;
+    min-width: 48px;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    min-block-size: 48px;
+    letter-spacing: normal;
+    border-radius: 5px;
+    padding-inline: 14px 10rem;
+  }
+  
+
+  .mobile-form select:focus,
+  .mobile-form input[type="text"]:focus {
+    border: 2px solid #fff;
+  }
+
+  .mobile-form select:hover,
+  .mobile-form input[type="text"]:hover {
+    border: 1px solid #fff;
+  }
+
+
+.mobile-form .btn-next {
+    padding: 12px 20px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #878787;
+    border-radius: 5px;
+    margin-top:5rem;
+    width: 20%;
+    border-radius: 20px;
+    float: left;
+    background-color: #1fdf64;
+    color: #000;
+    font-weight: bold;
+    transition: transform 0.1s ease;
+}
+
+.mobile-form .btn-next:hover{
+    transform:scaleX(1.05);
+}
+
+.mobile-form .mobile-text-label{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+#nextbutton.disabled {
+    pointer-events: none; 
+    opacity: 0.5;
+}
+
+#nextbutton.enabled {
+    pointer-events: auto; 
+    opacity: 1;
+}
+
+#nextbutton2.disabled{
+    pointer-events: none; 
+    opacity: 0.5;
+}
+
+#nextbutton2.enabled {
+    pointer-events: auto; 
+    opacity: 1;
+}
+
+.main-content .searchbar{
+    display: none;
+}
+
+.main-content .searchbar .searchbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 30rem;
+    overflow: hidden;
+    max-width: 100%;
+    min-width:50%;
+}
+
+.main-content .searchbar .searchbox input[type="text"] {
+    width: 100%;
+    outline: none;
+    background-color: #242424;
+    border: 0;
+    border-radius: 500px;
+    color: #fff;
+    height: 45px;
+    padding: 6px 36px;
+    text-overflow: ellipsis;
+}
+
+.main-content .searchbar .searchbox input[type="text"]:focus {
+    border: 1.5px solid #fff;
+}
+
+.main-content .searchbar  .search-groups {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    left:10px; 
+    flex:1;
+}
+
+.main-content .searchbar .search-groups i {
+    margin-right: 5px;
+    color: #888;
+}
+
+.main-content .searchbar .search-groups span {
+    color: #888;
+}
+
+#playinformation{
+    overflow:hidden;
+    margin-left:8px;
+    font-size: 13px;
+}
+
+.signup-container-heading .forgot-password-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-container-heading .forgot-password-heading h2,p{
+    color: #fff;
+    margin-bottom: 10px;
+
+}
+
+.signup-form .forgot-password-username{
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#need-support{
+    margin-top:1.5rem;
+}
+
+.group-items {
+    display: flex;
+    justify-content: center;
+    max-width: 734px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grouped {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center; 
+    text-align: center; 
+}
+
+.group-items .grouped p{
+    font-weight: bold;
+}
+
+.code-form input[type="text"] {
+    background-color: #000;
+    border: 1px solid #878787;    
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    min-width: 734px;
+    margin-top: 2px;
+    color: #fff;
+}
+
+.code-form input[type="text"]:focus {
+    border: 2px solid #fff;
+
+}
+
+.jump-to-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.jump-to-login a{
+    color: #fff;
+
+}
+
+.btn-next {
+    background-color: #1fdf64;
+    width:15%;
+    color: #000;
+    font-weight: bold;
+    border: 1px solid #878787;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#verify-phone-number {
+    margin-top: 20px;
+    text-align: center;
+    color: #000;
+}
+
+.categories-card {
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    width: 100%;
+    background-color: rgb(0, 100, 80);
+    border-radius: 10px;
+  }
+
+.categories-section .card-tag{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight:bold;
+    font-size: 1.3rem;
+}
+
+.category-heading{
+    display: flex;
+    margin: 0 auto;
+}
+
+#headings{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+  
+.categories-card img {
+    height: 8rem;
+    width: 8rem;
+    margin-bottom: 18px;
+    transform: rotate(25deg) translate(18%, -2%);
+    position: absolute;
+    right: 0px;
+    bottom: -26px;
+}
+
+.categories-section{
+    background-color: #171717;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 0;
+    overflow-y: auto; 
+    padding: 15px; 
+}
+
+.categories-card span{
+    display: flex;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    left: 10px;
+    margin: 5px 20px 0px 0px;
+    float: right;
+}
